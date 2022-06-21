@@ -3,9 +3,9 @@ module.exports = mongoose => {
     {
       title: String,
       description: String,
-      published: Boolean
+      // published: Boolean
     },
-    { timestamps: true }
+    // { timestamps: true }
   );
 
   schema.method("toJSON", function() {
@@ -14,6 +14,6 @@ module.exports = mongoose => {
     return object;
   });
 
-  const Tutorial = mongoose.model("tutorial", schema);
+  const Tutorial = mongoose.model("Tutorial", schema);
   return Tutorial;
 };
