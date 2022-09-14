@@ -28,7 +28,7 @@ db.EtatCivil = require("./etatCivil.model.js")(mongoose);
 db.Event = require("./event.model.js")(mongoose);
 db.Log = require("./log.model.js")(mongoose,AutoIncrementLog);
 db.Notice = require("./notice.model.js")(mongoose);
-db.Notification = require("./notice.model.js")(mongoose);
+db.Notification = require("./notification.model.js")(mongoose);
 db.Organisme = require("./organisme.model.js")(mongoose);
 db.OrganismeSiret = require("./organismeSiret.model.js")(mongoose);
 db.Pdf = require("./pdf.model.js")(mongoose);
@@ -38,7 +38,6 @@ db.Recipient = require("./recipient.model.js")(mongoose);
 db.Refence = require("./reference.model.js")(mongoose);
 db.Right = require("./right.model.js")(mongoose);
 db.Setting = require("./setting.model.js")(mongoose);
-
 db.User = require("./user.model.js")(mongoose, AutoIncrementUser);
 
 module.exports = db;

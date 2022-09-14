@@ -18,7 +18,5 @@ module.exports = (mongoose, AutoIncrementUser) => {
         return object;
     });
 
-
-
     return mongoose.model("Claim", schema);
 }

@@ -1,4 +1,4 @@
-module.exports = (mongoose) => {
+module.exports = (mongoose ) => {
     var schema = mongoose.Schema({
         dossier: {type: mongoose.Schema.Types.ObjectId, index: true, ref: "Dossier"},
         rights: [{type: mongoose.Schema.Types.ObjectId, ref: 'Right'}],

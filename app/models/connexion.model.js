@@ -1,3 +1,4 @@
+const {Schema} = require("mongoose");
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
         timeStamp: {type :Date, index: true},

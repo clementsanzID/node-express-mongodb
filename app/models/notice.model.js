@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        organisme: mongoose.model.Organisme,
+        organisme: {type: mongoose.Schema.Types.ObjectId, ref: 'Organisme'},
         title: {type: String, index: true},
         kewords: {type: String, index: true},
         content: {type: String, index: true},

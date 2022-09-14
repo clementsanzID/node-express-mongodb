@@ -23,14 +23,14 @@ module.exports = (mongoose, AutoIncrementUser) => {
         isValidEmail: {type: Boolean, index: true},
         modules: {},
         connectedLast: Date,
-        etatCivils: [{type: mongoose.model.EtatCivil, index: true}],
-        rights: [{type: mongoose.model.Right}],
-        pendings: [{type: mongoose.model.Pending}],
-        emails: [{type: mongoose.model.Email}],
-        deposits: [{type: mongoose.model.Deposit}],
-        connexions: [{type: mongoose.model.Connexion}],
-        claims: [{type: mongoose.model.Claim}],
-        // userDocuments: [{type: mongoose.model.UserDocument}],
+        etatCivils: [{type: mongoose.Schema.Types.ObjectId, ref: 'EtatCivil', index: true}],
+        rights: [{type: mongoose.Schema.Types.ObjectId, ref :'Right'}],
+        pendings: [{type: mongoose.Schema.Types.ObjectId, ref :'Pending'}],
+        emails: [{type: mongoose.Schema.Types.ObjectId, ref :'Email'}],
+        deposits: [{type: mongoose.Schema.Types.ObjectId, ref :'Deposit'}],
+        connexions: [{type: mongoose.Schema.Types.ObjectId, ref :'Connexion'}],
+        claims: [{type: mongoose.Schema.Types.ObjectId, ref :'Claim'}],
+        userDocuments: [{type: mongoose.Schema.Types.ObjectId, ref: 'UserDocument'}],
 
     });
     schema.plugin(AutoIncrementUser, {id: 'user', inc_field: 'sequence'});
