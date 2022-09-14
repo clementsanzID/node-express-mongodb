@@ -2,13 +2,11 @@ module.exports = (mongoose) => {
     var schema = mongoose.Schema({
         name: {type: String, index: true},
         organismeId: {type: Number, index: true},
-        client: {type: mongoose.model.Client, index: true},
-        textes: [{type: mongoose.model.Client}],
-        dossiers: [{type: mongoose.model.Dossier}],
+        client: {type: mongoose.Schema.Types.ObjectId, ref:'Client'},
         isNet: Boolean,
         isPasrau: Boolean,
         siret: {type: {}, index: true},
-        sirets: [{type: mongoose.model.OrganismeSiret}],
+        sirets: [{type: mongoose.Schema.Types.ObjectId, ref:'OrganismeSiret'}],
     });
 
     schema.method("toJSON", function () {

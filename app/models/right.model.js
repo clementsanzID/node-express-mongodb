@@ -1,8 +1,8 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        user: [{type: mongoose.model.User}],
-        dossier: [{type: mongoose.model.Dossier, index: true}],
-        activity: [{type: mongoose.model.Activity}],
+        user: [{type: mongoose.Schema.Types.ObjectId, ref:'User'}],
+        dossier: [{type: mongoose.Schema.Types.ObjectId, ref:'Dossier', index: true}],
+        activity: [{type: mongoose.Schema.Types.ObjectId, ref:'Activity'}],
         organismeID: {type: Number, index: true},
         numeroDossier: {type: Number, index: true},
         situation: {type: Number, index: true},
@@ -20,7 +20,7 @@ module.exports = (mongoose) => {
         minDuPeriode: Date,
         maxAuBis: Date,
         rejet: Number,
-        events: [{type: mongoose.model.Event}],
+        events: [{type: mongoose.Schema.Types.ObjectId, ref:'Event'}],
         totalPaiement: Number,
         isNet:Boolean,
         isPasrau: Boolean,

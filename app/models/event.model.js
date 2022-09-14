@@ -1,7 +1,7 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        activity: mongoose.model.Activity,
-        right: mongoose.model.Right,
+        activity: {type: mongoose.Schema.Types.ObjectId, ref:'Activity'},
+        right: {type: mongoose.Schema.Types.ObjectId, ref:'Right'},
         datePaiement: Date,
         periodDu: Date,
         periodAu: Date,

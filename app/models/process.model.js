@@ -1,11 +1,11 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        logs: [{type: mongoose.model.Log}],
+        logs: [{type: mongoose.Schema.Types.ObjectId, ref:'Log'}],
         name: String,
         path: String,
         icon: String,
         type: String,
-        alwaysup: Boolean,
+        alwaysUp: Boolean,
         loaded: Date,
         started: Date,
         stopped: Date,

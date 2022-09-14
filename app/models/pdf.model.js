@@ -2,9 +2,9 @@ module.exports = (mongoose) => {
     var schema = mongoose.Schema({
         title: String,
         resume: String,
-        organisme: mongoose.model.Organisme,
+        organisme: {type: mongoose.Schema.Types.ObjectId, ref:'Organisme'},
         path: String,
-        client: mongoose.model.Organisme,
+        client: {type: mongoose.Schema.Types.ObjectId, ref:'Client'},
         clients: {},
         position: Number,
     });

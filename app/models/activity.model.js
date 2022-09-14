@@ -1,9 +1,9 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        dossier: {type: mongoose.model.Dossier, index: true},
-        rights: [{type: mongoose.model.Right, ref: 'Right'}],
-        events: [{type: mongoose.model.Event, ref: 'Event'}],
-        pendings: [{type: mongoose.model.Pending, ref: 'Pending'}],
+        dossier: {type: mongoose.Schema.Types.ObjectId, index: true, ref: "Dossier"},
+        rights: [{type: mongoose.Schema.Types.ObjectId, ref: 'Right'}],
+        events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}],
+        pendings: [{type: mongoose.Schema.Types.ObjectId, ref: 'Pending'}],
         nir: String,
         organismeID: {type: Number, index: true},
         numeroDossier: {type: Number, index: true},

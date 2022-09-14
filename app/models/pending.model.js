@@ -1,8 +1,8 @@
 const stream = require("stream");
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        user: {type: mongoose.model.Organisme, index: true},
-        dossier: mongoose.model.Dossier,
+        user: {type: mongoose.Schema.Types.ObjectId, ref:'Activity', index: true},
+        dossier: {type: mongoose.Schema.Types.ObjectId, ref:'Dossier'},
         activity: mongoose.model.Activity,
         organismeID: {type: Number, index: true},
         numeroDossier: {type: Number, index: true},

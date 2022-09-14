@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        organisme: mongoose.model.Organisme,
+        organisme: {type: mongoose.Schema.Types.ObjectId, ref:'Organisme'},
         siret: {type: String, index: true},
     });
 
@@ -10,8 +10,5 @@ module.exports = (mongoose) => {
         return object;
     });
 
-    schema.virtual('clientId').get(function () {
-        return this.client.id;
-    });
     return mongoose.model("Organisme", schema);
 };

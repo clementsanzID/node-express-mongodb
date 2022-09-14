@@ -1,6 +1,6 @@
 module.exports = (mongoose, AutoIncrementLog) => {
     var schema = mongoose.Schema({
-        process: {type: mongoose.model.Process, index: true},
+        process: {type: mongoose.Schema.Types.ObjectId, ref:'Process', index: true},
         timestamps: {type: Date, index: true},
         task: String,
         type: String,

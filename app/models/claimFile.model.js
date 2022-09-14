@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        claim: mongoose.model.Claim,
+        claim: {type: mongoose.Schema.Types.ObjectId, ref: 'Claim'},
         sequence: {type: Number, index: true},
         name: String,
         size: Number,

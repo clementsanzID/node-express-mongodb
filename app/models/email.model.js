@@ -1,7 +1,7 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        client: mongoose.model.Client,
-        user: mongoose.model.User,
+        client: {type: mongoose.Schema.Types.ObjectId, ref: 'Client'},
+        user: {type: mongoose.Schema.Types.ObjectId, ref: 'Right'},
         type: Number,
         contentType: String,
         from: String,
@@ -15,7 +15,7 @@ module.exports = (mongoose) => {
         withError: Boolean,
         error: {},
         attachments: {},
-        claims: [{type: mongoose.model.Claim, ref: 'Claim'}]
+        claims: [{type: mongoose.Schema.Types.ObjectId, ref: 'Claim'}]
     });
     schema.method("toJSON", function() {
         const { __v, _id, ...object } = this.toObject();

@@ -1,7 +1,6 @@
 const {Schema} = require("mongoose");
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        deposit : mongoose.model.Deposit,
         sequence: {type: Number, index: true},
         kind: String,
         name: String,

@@ -1,7 +1,7 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        user: mongoose.model.User,
-        dossiers: [{type: mongoose.model.Dossier, ref: 'Dossier'}],
+        user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', index: true},
+        dossiers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Dossier'}],
         qualite: String,
         nom: String,
         prenom: String,

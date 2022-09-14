@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
-        dossier: mongoose.model.Dossier,
+        dossier: {type: mongoose.Schema.Types.ObjectId, ref:'Activity'},
         numeroMessage: {type: Number, index: true},
         timeStamp: Date,
         dateCreation: Date,
